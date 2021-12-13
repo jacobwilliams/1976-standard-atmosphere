@@ -144,17 +144,10 @@ pure real(wp) function geopotential_altitude(Z)
     geopotential_altitude = r0 * Z / (r0 + Z)
 end function geopotential_altitude
 
-pure function findb(H) result(b)
-    real(wp),intent(in) :: H
-    integer :: b
-    b = find(H, Hb) - 1
-end function findb
-
 pure real(wp) function Tm(H)
     real(wp),intent(in) :: H
-    integer :: i, b
-    b = findb(H)
-    i = b + 1
+    integer :: i
+    i = find(H, Hb)
     Tm = Tmb(i) + Lmb(i) * (H - Hb(i))
 end function Tm
 
@@ -166,9 +159,8 @@ end function temperature_lower
 
 pure real(wp) function pressure_lower(H)
     real(wp),intent(in) :: H
-    integer :: i, b
-    b = findb(H)
-    i = b + 1
+    integer :: i
+    i = find(H, Hb)
     if (Lmb(i) == 0) then
         pressure_lower = Pb(i) * exp(-g0 * M0 * (H - Hb(i)) / (Rstar * Tmb(i)))
     else
@@ -226,15 +218,13 @@ pure real(wp) function temperature_upper(Z)
     end if
 end function temperature_upper
 
-pure integer function interpolation_index(Z)
+pure integer function interpolation_index(Z) result(i)
     real(wp),intent(in) :: Z
-    integer :: i
     ! Find the index for the lower side of the altitude interval
     i = find(Z, Ztableupper)
     ! We are going to reference all elements from i - 1 to i + 1, so we need to
     ! adjust the index away from the boundaries
     if (i==1) i = 2
-    interpolation_index = i
 end function interpolation_index
 
 pure subroutine interpolation_scale_factors(i, Z, scale0, scale1, scale2)
