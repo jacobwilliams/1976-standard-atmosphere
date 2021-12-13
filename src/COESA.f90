@@ -91,7 +91,7 @@
     !     write(*,'(A,*(E30.18E3,1x))') 'Pb = ', Pb
     !     write(*,*) ''
     ! end subroutine initialize
-        
+
     real(wp),dimension(*),parameter :: Tmb = [0.288149993896484375E+003_wp, &
                                               0.216649993896484375E+003_wp, &
                                               0.216649993896484375E+003_wp, &
@@ -122,6 +122,18 @@
     contains
 !************************************************************************************
 
+pure function find(x, xvec) result(i)
+    real(wp),intent(in) :: x
+    real(wp),dimension(:),intent(in) :: xvec
+    integer :: i
+    i = 1
+    do
+        if (i >= size(xvec)) exit
+        if (x <= xvec(i + 1)) exit
+        i = i + 1
+    end do
+end function find
+
 pure real(wp) function density(s)
     class(State),intent(in) :: s
     density = s%pressure * s%mean_molecular_weight / (Rstar * s%temperature)
@@ -135,17 +147,7 @@ end function geopotential_altitude
 pure function findb(H) result(b)
     real(wp),intent(in) :: H
     integer :: b
-    integer :: i
-    i = 1
-    ! do while (i < size(Hb) .and. H > Hb(i + 1))
-    !     i = i + 1
-    ! end do
-    do 
-        if (i >= size(Hb)) exit
-        if (H <= Hb(i + 1)) exit
-        i = i + 1
-    end do
-    b = i - 1
+    b = find(H, Hb) - 1
 end function findb
 
 pure real(wp) function Tm(H)
@@ -187,12 +189,10 @@ pure real(wp) function mean_molecular_weight_ratio_lower(Z)
     else if (Z > Ztable(size(Ztable))) then
         error stop "altitude above maximum value in table"
     else
-        i = 1
-        do while (i < size(Ztable) .and. Z > Ztable(i + 1))
-            i = i + 1
-        end do
-        mean_molecular_weight_ratio_lower = Mratiotable(i) + (Mratiotable(i + 1) - Mratiotable(i)) / &
-                                            (Ztable(i + 1) - Ztable(i)) * (Z - Ztable(i))
+        i = find(Z, Ztable)
+        mean_molecular_weight_ratio_lower = &
+            Mratiotable(i) + (Mratiotable(i + 1) - Mratiotable(i)) / &
+            (Ztable(i + 1) - Ztable(i)) * (Z - Ztable(i))
     end if
 end function mean_molecular_weight_ratio_lower
 
@@ -230,10 +230,7 @@ pure integer function interpolation_index(Z)
     real(wp),intent(in) :: Z
     integer :: i
     ! Find the index for the lower side of the altitude interval
-    i = 1
-    do while (i < size(Ztableupper) .and. Z > Ztableupper(i+1))
-        i = i + 1
-    end do
+    i = find(Z, Ztableupper)
     ! We are going to reference all elements from i - 1 to i + 1, so we need to
     ! adjust the index away from the boundaries
     if (i==1) i = 2
