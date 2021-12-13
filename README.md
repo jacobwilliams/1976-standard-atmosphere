@@ -5,6 +5,8 @@
 The U.S. Committee on Extension to the Standard Atmosphere (COESA) atmosphere
 model, also known as the U.S. Standard Atmosphere, 1976. A Fortran translation of the Julia code from [COESA.jl](https://github.com/danielmatz/COESA.jl).
 
+Just an experiment. Has not been validated.
+
 ## Implementation
 
 For altitudes below 86 km, the equations from the original report are used.  The
