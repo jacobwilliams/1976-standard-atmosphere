@@ -8,6 +8,8 @@ implicit none
 real(wp) :: d
 integer :: i
 real(wp),dimension(*),parameter :: alts = [ 0.0_wp,  &
+                                            5.0_wp, &
+                                            10.0_wp, &
                                             80000.0_wp, &
                                             80000.1_wp, &
                                             80000.5_wp, &

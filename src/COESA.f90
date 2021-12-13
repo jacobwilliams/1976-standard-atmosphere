@@ -71,41 +71,22 @@
         13.09_wp, 12.34_wp, 11.51_wp, 10.62_wp,  9.72_wp,  8.83_wp,  8.00_wp,  7.24_wp,  6.58_wp,  6.01_wp, &
         5.54_wp,   5.16_wp,  4.85_wp,  4.60_wp,  4.40_wp,  4.25_wp,  4.12_wp,  4.02_wp,  3.94_wp] ! (kg / kmol)
 
-    ! subroutine initialize()
-    !     integer :: i
-    !     Tmb = [288.15] ! (K)
-    !     do i = 1, (size(Hb) - 1)
-    !         Tmb = [Tmb, Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i))]
-    !     end do
-    !     Pb = [101325.0]
-    !     do i = 1, (size(Hb) - 1)
-    !         if (Lmb(i) == 0) then
-    !             Pb = [Pb, Pb(i) * exp(-g0 * M0 * (Hb(i + 1) - Hb(i)) / (Rstar * Tmb(i)))]
-    !         else
-    !             Pb = [Pb, Pb(i) * (Tmb(i) / (Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i)))) ** (g0 * M0 / (Rstar * Lmb(i)))]
-    !         end if
-    !     end do
-    !     write(*,*) ''
-    !     write(*,'(A,*(E30.18E3,1x))') 'Tmb = ', Tmb
-    !     write(*,*) ''
-    !     write(*,'(A,*(E30.18E3,1x))') 'Pb = ', Pb
-    !     write(*,*) ''
-    ! end subroutine initialize
+    ! ... computed by the initialize() routine:
+    real(wp),dimension(*),parameter :: Tmb = [0.288150000000000000E+003, &
+                                              0.216650000000000000E+003, &
+                                              0.216650000000000000E+003, &
+                                              0.228650000000000000E+003, &
+                                              0.270650000000000000E+003, &
+                                              0.270650000000000000E+003, &
+                                              0.214650000000000000E+003 ]
 
-    real(wp),dimension(*),parameter :: Tmb = [0.288149993896484375E+003_wp, &
-                                              0.216649993896484375E+003_wp, &
-                                              0.216649993896484375E+003_wp, &
-                                              0.228649993896484375E+003_wp, &
-                                              0.270649993896484375E+003_wp, &
-                                              0.270649993896484375E+003_wp, &
-                                              0.214649993896484375E+003_wp]
-    real(wp),dimension(*),parameter :: Pb = [0.101325000000000000E+006_wp, &
-                                             0.226320631419326419E+005_wp, &
-                                             0.547488824962697163E+004_wp, &
-                                             0.868018574313198656E+003_wp, &
-                                             0.110906285838442443E+003_wp, &
-                                             0.669388604563498717E+002_wp, &
-                                             0.395641939562468359E+001_wp]
+    real(wp),dimension(*),parameter :: Pb = [0.101325000000000000E+006, &
+                                             0.226320639734629302E+005, &
+                                             0.547488866967777956E+004, &
+                                             0.868018684755227330E+003, &
+                                             0.110906305554965877E+003, &
+                                             0.669388731186872660E+002, &
+                                             0.395642042804072865E+001 ]
 
     type,public :: State
         real(wp) :: mean_molecular_weight = 0.0_wp
@@ -121,6 +102,28 @@
 
     contains
 !************************************************************************************
+
+subroutine initialize()
+    integer :: i
+    real(wp),dimension(:),allocatable :: Tmb,Pb
+    Tmb = [288.15_wp] ! (K)
+    do i = 1, (size(Hb) - 1)
+        Tmb = [Tmb, Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i))]
+    end do
+    Pb = [101325.0_wp]
+    do i = 1, (size(Hb) - 1)
+        if (Lmb(i) == 0) then
+            Pb = [Pb, Pb(i) * exp(-g0 * M0 * (Hb(i + 1) - Hb(i)) / (Rstar * Tmb(i)))]
+        else
+            Pb = [Pb, Pb(i) * (Tmb(i) / (Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i)))) ** (g0 * M0 / (Rstar * Lmb(i)))]
+        end if
+    end do
+    write(*,*) ''
+    write(*,'(A,*(E30.18E3,1x))') 'Tmb = ', Tmb
+    write(*,*) ''
+    write(*,'(A,*(E30.18E3,1x))') 'Pb = ', Pb
+    write(*,*) ''
+end subroutine initialize
 
 pure function find(x, xvec) result(i)
     real(wp),intent(in) :: x
