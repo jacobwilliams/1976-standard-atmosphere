@@ -15,7 +15,7 @@
     private
 
     real(wp),parameter :: r0 = 6356766.0_wp ! (m), effective Earth radius at 45 deg N latitude
-    real(wp),parameter :: g0 = 9.80665_wp ! (m / s²) or (m² / s² m')
+    real(wp),parameter :: g0 = 9.80665_wp ! (m / s^2) or (m^2 / s^2 m')
     real(wp),parameter :: M0 = 28.9644_wp ! (kg / kmol)
     real(wp),parameter :: Rstar = 8.31432e3_wp ! (N m / kmol K)
     real(wp),parameter :: gamma = 1.4_wp
@@ -71,9 +71,41 @@
         13.09_wp, 12.34_wp, 11.51_wp, 10.62_wp,  9.72_wp,  8.83_wp,  8.00_wp,  7.24_wp,  6.58_wp,  6.01_wp, &
         5.54_wp,   5.16_wp,  4.85_wp,  4.60_wp,  4.40_wp,  4.25_wp,  4.12_wp,  4.02_wp,  3.94_wp] ! (kg / kmol)
 
-    logical,private :: initialized = .false.
-    real(wp),dimension(:),allocatable :: Tmb
-    real(wp),dimension(:),allocatable :: Pb
+    ! subroutine initialize()
+    !     integer :: i
+    !     Tmb = [288.15] ! (K)
+    !     do i = 1, (size(Hb) - 1)
+    !         Tmb = [Tmb, Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i))]
+    !     end do
+    !     Pb = [101325.0]
+    !     do i = 1, (size(Hb) - 1)
+    !         if (Lmb(i) == 0) then
+    !             Pb = [Pb, Pb(i) * exp(-g0 * M0 * (Hb(i + 1) - Hb(i)) / (Rstar * Tmb(i)))]
+    !         else
+    !             Pb = [Pb, Pb(i) * (Tmb(i) / (Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i)))) ** (g0 * M0 / (Rstar * Lmb(i)))]
+    !         end if
+    !     end do
+    !     write(*,*) ''
+    !     write(*,'(A,*(E30.18E3,1x))') 'Tmb = ', Tmb
+    !     write(*,*) ''
+    !     write(*,'(A,*(E30.18E3,1x))') 'Pb = ', Pb
+    !     write(*,*) ''
+    ! end subroutine initialize
+        
+    real(wp),dimension(*),parameter :: Tmb = [0.288149993896484375E+003_wp, &
+                                              0.216649993896484375E+003_wp, &
+                                              0.216649993896484375E+003_wp, &
+                                              0.228649993896484375E+003_wp, &
+                                              0.270649993896484375E+003_wp, &
+                                              0.270649993896484375E+003_wp, &
+                                              0.214649993896484375E+003_wp]
+    real(wp),dimension(*),parameter :: Pb = [0.101325000000000000E+006_wp, &
+                                             0.226320631419326419E+005_wp, &
+                                             0.547488824962697163E+004_wp, &
+                                             0.868018574313198656E+003_wp, &
+                                             0.110906285838442443E+003_wp, &
+                                             0.669388604563498717E+002_wp, &
+                                             0.395641939562468359E+001_wp]
 
     type,public :: State
         real(wp) :: mean_molecular_weight = 0.0_wp
@@ -90,33 +122,6 @@
     contains
 !************************************************************************************
 
-subroutine initialize()
-    integer :: i
-    Tmb = [288.15] ! (K)
-    do i = 1, (size(Hb) - 1)
-        Tmb = [Tmb, Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i))]
-    end do
-    Pb = [101325.0]
-    do i = 1, (size(Hb) - 1)
-        if (Lmb(i) == 0) then
-            Pb = [Pb, Pb(i) * exp(-g0 * M0 * (Hb(i + 1) - Hb(i)) / (Rstar * Tmb(i)))]
-        else
-            Pb = [Pb, Pb(i) * (Tmb(i) / (Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i)))) ** (g0 * M0 / (Rstar * Lmb(i)))]
-        end if
-    end do
-    initialized = .true.
-
-
-    write(*,*) ''
-    write(*,*) 'Tmb = ', Tmb
-    write(*,*) ''
-    write(*,*) 'Pb = ', Pb
-    write(*,*) ''
-
-
-
-end subroutine initialize
-
 pure real(wp) function density(s)
     class(State),intent(in) :: s
     density = s%pressure * s%mean_molecular_weight / (Rstar * s%temperature)
@@ -132,7 +137,12 @@ pure function findb(H) result(b)
     integer :: b
     integer :: i
     i = 1
-    do while (i < size(Hb) .and. H > Hb(i + 1))
+    ! do while (i < size(Hb) .and. H > Hb(i + 1))
+    !     i = i + 1
+    ! end do
+    do 
+        if (i >= size(Hb)) exit
+        if (H <= Hb(i + 1)) exit
         i = i + 1
     end do
     b = i - 1
@@ -281,7 +291,6 @@ function COESA_atmosphere(Z) result(s)
     real(wp),intent(in) :: Z ! altitude in meters
     type(state) :: s
     real(wp) :: H,M,T,P,c
-    if (.not. initialized) call initialize()
     if (Z < -5000.0_wp) then
         error stop "altitude below lower bound of -5000 m"
     else if (Z > 1000000.0_wp) then
@@ -306,7 +315,6 @@ function COESA_density(Z) result(density)
     real(wp),intent(in) :: Z !! altitude in meters
     real(wp) :: density !! kg/m^3
     real(wp) :: H,M,T,P
-    if (.not. initialized) call initialize()
     if (Z < -5000.0_wp) then
         error stop "altitude below lower bound of -5000 m"
     else if (Z > 1000000.0_wp) then

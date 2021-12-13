@@ -1,0 +1,18 @@
+name = "standard-atmosphere"
+author = "Jacob Williams"
+copyright  = "Copyright (c) 2021, Jacob Williams"
+license = "BSD-3"
+description = "1976 Standard Atmosphere in Modern Fortran"
+homepage = "https://github.com/jacobwilliams/1976-standard-atmosphere"
+keywords = ["standard-atmosphere"]
+
+[build]
+auto-executables = true
+auto-examples = true
+auto-tests = true
+
+[library]
+source-dir = "src"
+
+[install]
+library = true
