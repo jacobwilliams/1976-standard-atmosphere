@@ -1,6 +1,10 @@
-1976 Standard Atmosphere in Modern Fortran
+
+![1976-standard-atmosphere](/media/logo.png)
+============
 
 ![Build Status](https://github.com/jacobwilliams/1976-standard-atmosphere/actions/workflows/CI.yml/badge.svg)
+
+1976 Standard Atmosphere in Modern Fortran
 
 The U.S. Committee on Extension to the Standard Atmosphere (COESA) atmosphere
 model, also known as the U.S. Standard Atmosphere, 1976. A Fortran translation of the Julia code from [COESA.jl](https://github.com/danielmatz/COESA.jl).
