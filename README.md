@@ -1,5 +1,5 @@
 
-![1976-standard-atmosphere](/media/logo.png)
+![1976-standard-atmosphere](media/logo.png)
 ============
 
 ![Build Status](https://github.com/jacobwilliams/1976-standard-atmosphere/actions/workflows/CI.yml/badge.svg)
