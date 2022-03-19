@@ -1,6 +1,6 @@
 name = "standard-atmosphere"
 author = "Jacob Williams"
-copyright  = "Copyright (c) 2021, Jacob Williams"
+copyright  = "Copyright (c) 2021-2022, Jacob Williams"
 license = "BSD-3"
 description = "1976 Standard Atmosphere in Modern Fortran"
 homepage = "https://github.com/jacobwilliams/1976-standard-atmosphere"
