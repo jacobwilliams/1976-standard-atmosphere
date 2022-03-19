@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="1976 Standard Atmosphere in Modern Fortran">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,54 +43,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/coesa.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/coesa.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -104,51 +70,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>interpolation_index
       <small>Function</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.6% of total for procedures.">5 statements</a>
+    title=" 2.5% of total for procedures.">5 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/COESA.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/coesa.f90.html'>COESA.f90</a></li>
-    
      <li><a href='../module/coesa_module.html'>COESA_module</a></li>
-    
-  
      <li class="active">interpolation_index</li>
   </ol>
 </div>
@@ -164,32 +108,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -197,70 +118,31 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-private pure function interpolation_index(Z) result(i)
+    <h2>private pure function interpolation_index(Z) result(i)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-z~5"></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>Z</strong></td><td></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-i~2"></span>integer
-  </small></h3>
-    
-    
+   <h3>Return Value <small><span class="anchor" id="variable-i~2"></span>integer</small></h3>
     
     <br>
-    
-    
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Calls</h3>
@@ -361,8 +243,6 @@ private pure function interpolation_index(Z) result(i)
     </div></div></div></div>
       </div>
     </div>
-     
-     
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Called by</h3>
@@ -385,77 +265,77 @@ private pure function interpolation_index(Z) result(i)
 <polygon fill="none" stroke="black" points="485,-45 370,-45 370,-21 485,-21 485,-45"/>
 <text text-anchor="middle" x="427.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">interpolation_index</text>
 </g>
-<!-- proc~pressure_upper -->
-<g id="proc~~interpolation_index~~CalledByGraph_node2" class="node">
-<title>proc~pressure_upper</title>
-<g id="a_proc~~interpolation_index~~CalledByGraph_node2"><a xlink:href=".././proc/pressure_upper.html" xlink:title="pressure_upper">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-66 197,-66 197,-42 291,-42 291,-66"/>
-<text text-anchor="middle" x="244" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pressure_upper</text>
-</a>
-</g>
-</g>
-<!-- proc~pressure_upper&#45;&gt;proc~interpolation_index -->
-<g id="proc~~interpolation_index~~CalledByGraph_edge1" class="edge">
-<title>proc~pressure_upper&#45;&gt;proc~interpolation_index</title>
-<path fill="none" stroke="#000000" d="M291.27,-48.65C312.13,-46.23 337.15,-43.34 359.97,-40.7"/>
-<polygon fill="#000000" stroke="#000000" points="360.41,-44.17 369.94,-39.54 359.6,-37.22 360.41,-44.17"/>
-</g>
 <!-- proc~mean_molecular_weight_upper -->
-<g id="proc~~interpolation_index~~CalledByGraph_node3" class="node">
+<g id="proc~~interpolation_index~~CalledByGraph_node2" class="node">
 <title>proc~mean_molecular_weight_upper</title>
-<g id="a_proc~~interpolation_index~~CalledByGraph_node3"><a xlink:href=".././proc/mean_molecular_weight_upper.html" xlink:title="mean_molecular_weight_upper">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="334,-24 154,-24 154,0 334,0 334,-24"/>
-<text text-anchor="middle" x="244" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_upper</text>
+<g id="a_proc~~interpolation_index~~CalledByGraph_node2"><a xlink:href=".././proc/mean_molecular_weight_upper.html" xlink:title="mean_molecular_weight_upper">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="334,-66 154,-66 154,-42 334,-42 334,-66"/>
+<text text-anchor="middle" x="244" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_upper</text>
 </a>
 </g>
 </g>
 <!-- proc~mean_molecular_weight_upper&#45;&gt;proc~interpolation_index -->
-<g id="proc~~interpolation_index~~CalledByGraph_edge2" class="edge">
+<g id="proc~~interpolation_index~~CalledByGraph_edge1" class="edge">
 <title>proc~mean_molecular_weight_upper&#45;&gt;proc~interpolation_index</title>
-<path fill="none" stroke="#000000" d="M334.15,-22.32C342.82,-23.32 351.51,-24.32 359.9,-25.29"/>
-<polygon fill="#000000" stroke="#000000" points="359.63,-28.79 369.97,-26.46 360.43,-21.83 359.63,-28.79"/>
+<path fill="none" stroke="#000000" d="M334.15,-43.68C342.82,-42.68 351.51,-41.68 359.9,-40.71"/>
+<polygon fill="#000000" stroke="#000000" points="360.43,-44.17 369.97,-39.54 359.63,-37.21 360.43,-44.17"/>
 </g>
-<!-- proc~coesa_density -->
-<g id="proc~~interpolation_index~~CalledByGraph_node4" class="node">
-<title>proc~coesa_density</title>
-<g id="a_proc~~interpolation_index~~CalledByGraph_node4"><a xlink:href=".././proc/coesa_density.html" xlink:title="COESA_density">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="105.5,-66 12.5,-66 12.5,-42 105.5,-42 105.5,-66"/>
-<text text-anchor="middle" x="59" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">COESA_density</text>
+<!-- proc~pressure_upper -->
+<g id="proc~~interpolation_index~~CalledByGraph_node3" class="node">
+<title>proc~pressure_upper</title>
+<g id="a_proc~~interpolation_index~~CalledByGraph_node3"><a xlink:href=".././proc/pressure_upper.html" xlink:title="pressure_upper">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-24 197,-24 197,0 291,0 291,-24"/>
+<text text-anchor="middle" x="244" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pressure_upper</text>
 </a>
 </g>
 </g>
-<!-- proc~coesa_density&#45;&gt;proc~pressure_upper -->
-<g id="proc~~interpolation_index~~CalledByGraph_edge3" class="edge">
-<title>proc~coesa_density&#45;&gt;proc~pressure_upper</title>
-<path fill="none" stroke="#000000" d="M105.71,-54C130.29,-54 160.81,-54 186.82,-54"/>
-<polygon fill="#000000" stroke="#000000" points="186.92,-57.5 196.92,-54 186.92,-50.5 186.92,-57.5"/>
-</g>
-<!-- proc~coesa_density&#45;&gt;proc~mean_molecular_weight_upper -->
-<g id="proc~~interpolation_index~~CalledByGraph_edge5" class="edge">
-<title>proc~coesa_density&#45;&gt;proc~mean_molecular_weight_upper</title>
-<path fill="none" stroke="#000000" d="M105.71,-43.51C128.32,-38.32 155.95,-31.98 180.49,-26.35"/>
-<polygon fill="#000000" stroke="#000000" points="181.47,-29.71 190.43,-24.06 179.9,-22.89 181.47,-29.71"/>
+<!-- proc~pressure_upper&#45;&gt;proc~interpolation_index -->
+<g id="proc~~interpolation_index~~CalledByGraph_edge2" class="edge">
+<title>proc~pressure_upper&#45;&gt;proc~interpolation_index</title>
+<path fill="none" stroke="#000000" d="M291.27,-17.35C312.13,-19.77 337.15,-22.66 359.97,-25.3"/>
+<polygon fill="#000000" stroke="#000000" points="359.6,-28.78 369.94,-26.46 360.41,-21.83 359.6,-28.78"/>
 </g>
 <!-- proc~coesa_atmosphere -->
-<g id="proc~~interpolation_index~~CalledByGraph_node5" class="node">
+<g id="proc~~interpolation_index~~CalledByGraph_node4" class="node">
 <title>proc~coesa_atmosphere</title>
-<g id="a_proc~~interpolation_index~~CalledByGraph_node5"><a xlink:href=".././proc/coesa_atmosphere.html" xlink:title="COESA_atmosphere">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="118,-24 0,-24 0,0 118,0 118,-24"/>
-<text text-anchor="middle" x="59" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">COESA_atmosphere</text>
+<g id="a_proc~~interpolation_index~~CalledByGraph_node4"><a xlink:href=".././proc/coesa_atmosphere.html" xlink:title="COESA_atmosphere">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="118,-66 0,-66 0,-42 118,-42 118,-66"/>
+<text text-anchor="middle" x="59" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">COESA_atmosphere</text>
 </a>
 </g>
 </g>
-<!-- proc~coesa_atmosphere&#45;&gt;proc~pressure_upper -->
-<g id="proc~~interpolation_index~~CalledByGraph_edge4" class="edge">
-<title>proc~coesa_atmosphere&#45;&gt;proc~pressure_upper</title>
-<path fill="none" stroke="#000000" d="M112.44,-24.04C135.73,-29.38 163.17,-35.68 186.88,-41.12"/>
-<polygon fill="#000000" stroke="#000000" points="186.25,-44.57 196.78,-43.39 187.82,-37.74 186.25,-44.57"/>
-</g>
 <!-- proc~coesa_atmosphere&#45;&gt;proc~mean_molecular_weight_upper -->
-<g id="proc~~interpolation_index~~CalledByGraph_edge6" class="edge">
+<g id="proc~~interpolation_index~~CalledByGraph_edge3" class="edge">
 <title>proc~coesa_atmosphere&#45;&gt;proc~mean_molecular_weight_upper</title>
-<path fill="none" stroke="#000000" d="M118.15,-12C126.35,-12 134.97,-12 143.67,-12"/>
-<polygon fill="#000000" stroke="#000000" points="143.92,-15.5 153.92,-12 143.92,-8.5 143.92,-15.5"/>
+<path fill="none" stroke="#000000" d="M118.15,-54C126.35,-54 134.97,-54 143.67,-54"/>
+<polygon fill="#000000" stroke="#000000" points="143.92,-57.5 153.92,-54 143.92,-50.5 143.92,-57.5"/>
+</g>
+<!-- proc~coesa_atmosphere&#45;&gt;proc~pressure_upper -->
+<g id="proc~~interpolation_index~~CalledByGraph_edge5" class="edge">
+<title>proc~coesa_atmosphere&#45;&gt;proc~pressure_upper</title>
+<path fill="none" stroke="#000000" d="M112.44,-41.96C135.73,-36.62 163.17,-30.32 186.88,-24.88"/>
+<polygon fill="#000000" stroke="#000000" points="187.82,-28.26 196.78,-22.61 186.25,-21.43 187.82,-28.26"/>
+</g>
+<!-- proc~coesa_density -->
+<g id="proc~~interpolation_index~~CalledByGraph_node5" class="node">
+<title>proc~coesa_density</title>
+<g id="a_proc~~interpolation_index~~CalledByGraph_node5"><a xlink:href=".././proc/coesa_density.html" xlink:title="COESA_density">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="105.5,-24 12.5,-24 12.5,0 105.5,0 105.5,-24"/>
+<text text-anchor="middle" x="59" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">COESA_density</text>
+</a>
+</g>
+</g>
+<!-- proc~coesa_density&#45;&gt;proc~mean_molecular_weight_upper -->
+<g id="proc~~interpolation_index~~CalledByGraph_edge4" class="edge">
+<title>proc~coesa_density&#45;&gt;proc~mean_molecular_weight_upper</title>
+<path fill="none" stroke="#000000" d="M105.71,-22.49C128.32,-27.68 155.95,-34.02 180.49,-39.65"/>
+<polygon fill="#000000" stroke="#000000" points="179.9,-43.11 190.43,-41.94 181.47,-36.29 179.9,-43.11"/>
+</g>
+<!-- proc~coesa_density&#45;&gt;proc~pressure_upper -->
+<g id="proc~~interpolation_index~~CalledByGraph_edge6" class="edge">
+<title>proc~coesa_density&#45;&gt;proc~pressure_upper</title>
+<path fill="none" stroke="#000000" d="M105.71,-12C130.29,-12 160.81,-12 186.82,-12"/>
+<polygon fill="#000000" stroke="#000000" points="186.92,-15.5 196.92,-12 186.92,-8.5 186.92,-15.5"/>
 </g>
 </g>
 </svg>
@@ -520,34 +400,11 @@ private pure function interpolation_index(Z) result(i)
     </div></div></div></div>
       </div>
     </div>
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -555,63 +412,48 @@ private pure function interpolation_index(Z) result(i)
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="k">pure </span><span class="kt">integer </span><span class="k">function </span><span class="n">interpolation_index</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Z</span>
-    <span class="c">! Find the index for the lower side of the altitude interval</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">Ztableupper</span><span class="p">)</span>
-    <span class="c">! We are going to reference all elements from i - 1 to i + 1, so we need to</span>
-    <span class="c">! adjust the index away from the boundaries</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">end function </span><span class="n">interpolation_index</span>
+    <div class="highlight"><pre><span></span><span class="k">pure </span><span class="kt">integer </span><span class="k">function </span><span class="n">interpolation_index</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Z</span><span class="w"></span>
+<span class="w">    </span><span class="c">! Find the index for the lower side of the altitude interval</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Ztableupper</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">! We are going to reference all elements from i - 1 to i + 1, so we need to</span>
+<span class="w">    </span><span class="c">! adjust the index away from the boundaries</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="k">end function </span><span class="n">interpolation_index</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>standard-atmosphere was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>standard-atmosphere was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -639,14 +481,11 @@ private pure function interpolation_index(Z) result(i)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

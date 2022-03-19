@@ -277,6 +277,13 @@ pure real(wp) function speed_of_sound_86km()
     speed_of_sound_86km = speed_of_sound_lower(T, M)
 end function speed_of_sound_86km
 
+pure real(wp) function dynamic_viscosity(Z,T)
+    real(wp),intent(in) :: Z !! altitude (m)
+    real(wp),intent(in) :: T !! temperature (K)
+    if (Z > 86000.0_wp) error stop 'unable to compute dynamic viscosity above 86km'
+    dynamic_viscosity = 1.458e-6_wp * T**(3.0_wp/2.0_wp) / (T + 110.4_wp)
+end function dynamic_viscosity
+
 function COESA_atmosphere(Z) result(s)
     real(wp),intent(in) :: Z ! altitude in meters
     type(state) :: s

@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="1976 Standard Atmosphere in Modern Fortran">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,54 +43,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/coesa.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/coesa.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -104,51 +70,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>COESA_density
       <small>Function</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="10.3% of total for procedures.">20 statements</a>
+    title="10.0% of total for procedures.">20 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/COESA.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/coesa.f90.html'>COESA.f90</a></li>
-    
      <li><a href='../module/coesa_module.html'>COESA_module</a></li>
-    
-  
      <li class="active">COESA_density</li>
   </ol>
 </div>
@@ -164,32 +108,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -197,72 +118,32 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-public function COESA_density(Z) result(density)
+    <h2>public function COESA_density(Z) result(density)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>a simple version that just returns density</p>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-z~9"></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-z~10"></span>real(kind=wp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>Z</strong></td><td><p>altitude in meters</p></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-density~3"></span>real(kind=wp)
-  </small></h3>
+   <h3>Return Value <small><span class="anchor" id="variable-density~3"></span>real(kind=wp)</small></h3>
     <p>kg/m^3</p>
-    
-    
     <br>
-    
-    
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Calls</h3>
@@ -274,226 +155,226 @@ public function COESA_density(Z) result(density)
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~coesa_density~~CallsGraph Pages: 1 -->
-<svg id="proccoesa_densityCallsGraph" width="641pt" height="283pt"
- viewBox="0.00 0.00 641.00 283.19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~coesa_density~~CallsGraph" class="graph" transform="scale(1.02 1.02) rotate(0) translate(4 283.61)">
+<svg id="proccoesa_densityCallsGraph" width="641pt" height="276pt"
+ viewBox="0.00 0.00 641.00 275.70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~coesa_density~~CallsGraph" class="graph" transform="scale(1.02 1.02) rotate(0) translate(4 276)">
 <title>proc~~coesa_density~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-283.61 647,-283.61 647,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-276 647,-276 647,4 -4,4"/>
 <!-- proc~coesa_density -->
 <g id="proc~~coesa_density~~CallsGraph_node1" class="node">
 <title>proc~coesa_density</title>
-<polygon fill="none" stroke="black" points="93,-153.61 0,-153.61 0,-129.61 93,-129.61 93,-153.61"/>
-<text text-anchor="middle" x="46.5" y="-139.21" font-family="Helvetica,sans-Serif" font-size="10.50">COESA_density</text>
+<polygon fill="none" stroke="black" points="93,-146 0,-146 0,-122 93,-122 93,-146"/>
+<text text-anchor="middle" x="46.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50">COESA_density</text>
 </g>
 <!-- proc~geopotential_altitude -->
 <g id="proc~~coesa_density~~CallsGraph_node2" class="node">
 <title>proc~geopotential_altitude</title>
 <g id="a_proc~~coesa_density~~CallsGraph_node2"><a xlink:href=".././proc/geopotential_altitude.html" xlink:title="geopotential_altitude">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="282,-279.61 156,-279.61 156,-255.61 282,-255.61 282,-279.61"/>
-<text text-anchor="middle" x="219" y="-265.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">geopotential_altitude</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="282,-272 156,-272 156,-248 282,-248 282,-272"/>
+<text text-anchor="middle" x="219" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">geopotential_altitude</text>
 </a>
 </g>
 </g>
 <!-- proc~coesa_density&#45;&gt;proc~geopotential_altitude -->
 <g id="proc~~coesa_density~~CallsGraph_edge1" class="edge">
 <title>proc~coesa_density&#45;&gt;proc~geopotential_altitude</title>
-<path fill="none" stroke="#000000" d="M53.42,-153.87C64.8,-176.06 91.92,-222.78 129,-246.61 134.35,-250.04 140.2,-252.92 146.26,-255.32"/>
-<polygon fill="#000000" stroke="#000000" points="145.34,-258.71 155.93,-258.73 147.66,-252.11 145.34,-258.71"/>
-</g>
-<!-- proc~temperature_upper -->
-<g id="proc~~coesa_density~~CallsGraph_node3" class="node">
-<title>proc~temperature_upper</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node3"><a xlink:href=".././proc/temperature_upper.html" xlink:title="temperature_upper">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="277,-237.61 161,-237.61 161,-213.61 277,-213.61 277,-237.61"/>
-<text text-anchor="middle" x="219" y="-223.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">temperature_upper</text>
-</a>
-</g>
-</g>
-<!-- proc~coesa_density&#45;&gt;proc~temperature_upper -->
-<g id="proc~~coesa_density~~CallsGraph_edge3" class="edge">
-<title>proc~coesa_density&#45;&gt;proc~temperature_upper</title>
-<path fill="none" stroke="#000000" d="M59.62,-153.73C74.62,-168.04 101.56,-191.52 129,-204.61 135.95,-207.92 143.47,-210.74 151.08,-213.12"/>
-<polygon fill="#000000" stroke="#000000" points="150.16,-216.49 160.74,-215.91 152.1,-209.77 150.16,-216.49"/>
-</g>
-<!-- proc~pressure_lower -->
-<g id="proc~~coesa_density~~CallsGraph_node4" class="node">
-<title>proc~pressure_lower</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node4"><a xlink:href=".././proc/pressure_lower.html" xlink:title="pressure_lower">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="495,-27.61 403,-27.61 403,-3.61 495,-3.61 495,-27.61"/>
-<text text-anchor="middle" x="449" y="-13.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pressure_lower</text>
-</a>
-</g>
-</g>
-<!-- proc~coesa_density&#45;&gt;proc~pressure_lower -->
-<g id="proc~~coesa_density~~CallsGraph_edge2" class="edge">
-<title>proc~coesa_density&#45;&gt;proc~pressure_lower</title>
-<path fill="none" stroke="#000000" d="M52.73,-129.46C63.32,-106.57 89.67,-57.5 129,-36.61 212.4,7.69 325.86,2.38 392.57,-6.16"/>
-<polygon fill="#000000" stroke="#000000" points="392.49,-9.68 402.87,-7.56 393.43,-2.75 392.49,-9.68"/>
+<path fill="none" stroke="#000000" d="M53.42,-146.26C64.8,-168.45 91.92,-215.17 129,-239 134.35,-242.44 140.2,-245.31 146.26,-247.72"/>
+<polygon fill="#000000" stroke="#000000" points="145.34,-251.1 155.93,-251.12 147.66,-244.5 145.34,-251.1"/>
 </g>
 <!-- proc~mean_molecular_weight_upper -->
-<g id="proc~~coesa_density~~CallsGraph_node5" class="node">
+<g id="proc~~coesa_density~~CallsGraph_node3" class="node">
 <title>proc~mean_molecular_weight_upper</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node5"><a xlink:href=".././proc/mean_molecular_weight_upper.html" xlink:title="mean_molecular_weight_upper">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="309,-153.61 129,-153.61 129,-129.61 309,-129.61 309,-153.61"/>
-<text text-anchor="middle" x="219" y="-139.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_upper</text>
+<g id="a_proc~~coesa_density~~CallsGraph_node3"><a xlink:href=".././proc/mean_molecular_weight_upper.html" xlink:title="mean_molecular_weight_upper">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="309,-146 129,-146 129,-122 309,-122 309,-146"/>
+<text text-anchor="middle" x="219" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_upper</text>
 </a>
 </g>
 </g>
 <!-- proc~coesa_density&#45;&gt;proc~mean_molecular_weight_upper -->
-<g id="proc~~coesa_density~~CallsGraph_edge4" class="edge">
+<g id="proc~~coesa_density~~CallsGraph_edge2" class="edge">
 <title>proc~coesa_density&#45;&gt;proc~mean_molecular_weight_upper</title>
-<path fill="none" stroke="#000000" d="M93.19,-141.61C101.22,-141.61 109.85,-141.61 118.68,-141.61"/>
-<polygon fill="#000000" stroke="#000000" points="118.72,-145.11 128.72,-141.61 118.72,-138.11 118.72,-145.11"/>
-</g>
-<!-- proc~temperature_lower -->
-<g id="proc~~coesa_density~~CallsGraph_node6" class="node">
-<title>proc~temperature_lower</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node6"><a xlink:href=".././proc/temperature_lower.html" xlink:title="temperature_lower">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="276,-195.61 162,-195.61 162,-171.61 276,-171.61 276,-195.61"/>
-<text text-anchor="middle" x="219" y="-181.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">temperature_lower</text>
-</a>
-</g>
-</g>
-<!-- proc~coesa_density&#45;&gt;proc~temperature_lower -->
-<g id="proc~~coesa_density~~CallsGraph_edge5" class="edge">
-<title>proc~coesa_density&#45;&gt;proc~temperature_lower</title>
-<path fill="none" stroke="#000000" d="M93.15,-153.55C104.83,-156.55 117.37,-159.74 129,-162.61 137.83,-164.79 147.16,-167.04 156.33,-169.23"/>
-<polygon fill="#000000" stroke="#000000" points="155.65,-172.67 166.19,-171.57 157.27,-165.86 155.65,-172.67"/>
+<path fill="none" stroke="#000000" d="M93.19,-134C101.22,-134 109.85,-134 118.68,-134"/>
+<polygon fill="#000000" stroke="#000000" points="118.72,-137.5 128.72,-134 118.72,-130.5 118.72,-137.5"/>
 </g>
 <!-- proc~pressure_upper -->
-<g id="proc~~coesa_density~~CallsGraph_node7" class="node">
+<g id="proc~~coesa_density~~CallsGraph_node4" class="node">
 <title>proc~pressure_upper</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node7"><a xlink:href=".././proc/pressure_upper.html" xlink:title="pressure_upper">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="266,-111.61 172,-111.61 172,-87.61 266,-87.61 266,-111.61"/>
-<text text-anchor="middle" x="219" y="-97.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pressure_upper</text>
+<g id="a_proc~~coesa_density~~CallsGraph_node4"><a xlink:href=".././proc/pressure_upper.html" xlink:title="pressure_upper">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="266,-104 172,-104 172,-80 266,-80 266,-104"/>
+<text text-anchor="middle" x="219" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pressure_upper</text>
 </a>
 </g>
 </g>
 <!-- proc~coesa_density&#45;&gt;proc~pressure_upper -->
-<g id="proc~~coesa_density~~CallsGraph_edge6" class="edge">
+<g id="proc~~coesa_density~~CallsGraph_edge3" class="edge">
 <title>proc~coesa_density&#45;&gt;proc~pressure_upper</title>
-<path fill="none" stroke="#000000" d="M93.15,-129.67C104.83,-126.67 117.37,-123.48 129,-120.61 139.62,-117.99 150.97,-115.26 161.89,-112.66"/>
-<polygon fill="#000000" stroke="#000000" points="162.84,-116.04 171.76,-110.33 161.23,-109.22 162.84,-116.04"/>
+<path fill="none" stroke="#000000" d="M93.15,-122.06C104.83,-119.06 117.37,-115.87 129,-113 139.62,-110.38 150.97,-107.65 161.89,-105.05"/>
+<polygon fill="#000000" stroke="#000000" points="162.84,-108.43 171.76,-102.72 161.23,-101.62 162.84,-108.43"/>
+</g>
+<!-- proc~pressure_lower -->
+<g id="proc~~coesa_density~~CallsGraph_node5" class="node">
+<title>proc~pressure_lower</title>
+<g id="a_proc~~coesa_density~~CallsGraph_node5"><a xlink:href=".././proc/pressure_lower.html" xlink:title="pressure_lower">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="495,-62 403,-62 403,-38 495,-38 495,-62"/>
+<text text-anchor="middle" x="449" y="-47.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pressure_lower</text>
+</a>
+</g>
+</g>
+<!-- proc~coesa_density&#45;&gt;proc~pressure_lower -->
+<g id="proc~~coesa_density~~CallsGraph_edge4" class="edge">
+<title>proc~coesa_density&#45;&gt;proc~pressure_lower</title>
+<path fill="none" stroke="#000000" d="M58.52,-121.88C73.02,-106.87 100.07,-81.95 129,-71 216.7,-37.8 327.59,-39.28 392.86,-44.12"/>
+<polygon fill="#000000" stroke="#000000" points="392.69,-47.62 402.94,-44.92 393.24,-40.64 392.69,-47.62"/>
+</g>
+<!-- proc~temperature_upper -->
+<g id="proc~~coesa_density~~CallsGraph_node6" class="node">
+<title>proc~temperature_upper</title>
+<g id="a_proc~~coesa_density~~CallsGraph_node6"><a xlink:href=".././proc/temperature_upper.html" xlink:title="temperature_upper">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="277,-24 161,-24 161,0 277,0 277,-24"/>
+<text text-anchor="middle" x="219" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">temperature_upper</text>
+</a>
+</g>
+</g>
+<!-- proc~coesa_density&#45;&gt;proc~temperature_upper -->
+<g id="proc~~coesa_density~~CallsGraph_edge5" class="edge">
+<title>proc~coesa_density&#45;&gt;proc~temperature_upper</title>
+<path fill="none" stroke="#000000" d="M54.6,-121.69C67.02,-101.22 94.7,-60.25 129,-38 135.82,-33.58 143.4,-29.89 151.2,-26.81"/>
+<polygon fill="#000000" stroke="#000000" points="152.54,-30.05 160.76,-23.36 150.17,-23.46 152.54,-30.05"/>
+</g>
+<!-- proc~temperature_lower -->
+<g id="proc~~coesa_density~~CallsGraph_node7" class="node">
+<title>proc~temperature_lower</title>
+<g id="a_proc~~coesa_density~~CallsGraph_node7"><a xlink:href=".././proc/temperature_lower.html" xlink:title="temperature_lower">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="276,-188 162,-188 162,-164 276,-164 276,-188"/>
+<text text-anchor="middle" x="219" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">temperature_lower</text>
+</a>
+</g>
+</g>
+<!-- proc~coesa_density&#45;&gt;proc~temperature_lower -->
+<g id="proc~~coesa_density~~CallsGraph_edge6" class="edge">
+<title>proc~coesa_density&#45;&gt;proc~temperature_lower</title>
+<path fill="none" stroke="#000000" d="M93.15,-145.94C104.83,-148.94 117.37,-152.13 129,-155 137.83,-157.18 147.16,-159.43 156.33,-161.62"/>
+<polygon fill="#000000" stroke="#000000" points="155.65,-165.06 166.19,-163.96 157.27,-158.25 155.65,-165.06"/>
 </g>
 <!-- proc~mean_molecular_weight_lower -->
 <g id="proc~~coesa_density~~CallsGraph_node8" class="node">
 <title>proc~mean_molecular_weight_lower</title>
 <g id="a_proc~~coesa_density~~CallsGraph_node8"><a xlink:href=".././proc/mean_molecular_weight_lower.html" xlink:title="mean_molecular_weight_lower">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="308,-69.61 130,-69.61 130,-45.61 308,-45.61 308,-69.61"/>
-<text text-anchor="middle" x="219" y="-55.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_lower</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="308,-230 130,-230 130,-206 308,-206 308,-230"/>
+<text text-anchor="middle" x="219" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_lower</text>
 </a>
 </g>
 </g>
 <!-- proc~coesa_density&#45;&gt;proc~mean_molecular_weight_lower -->
 <g id="proc~~coesa_density~~CallsGraph_edge7" class="edge">
 <title>proc~coesa_density&#45;&gt;proc~mean_molecular_weight_lower</title>
-<path fill="none" stroke="#000000" d="M59.62,-129.49C74.62,-115.18 101.56,-91.69 129,-78.61 133.34,-76.54 137.9,-74.67 142.56,-72.97"/>
-<polygon fill="#000000" stroke="#000000" points="143.87,-76.22 152.25,-69.74 141.66,-69.58 143.87,-76.22"/>
-</g>
-<!-- proc~find -->
-<g id="proc~~coesa_density~~CallsGraph_node12" class="node">
-<title>proc~find</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node12"><a xlink:href=".././proc/find.html" xlink:title="find">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="643,-90.61 589,-90.61 589,-66.61 643,-66.61 643,-90.61"/>
-<text text-anchor="middle" x="616" y="-76.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find</text>
-</a>
-</g>
-</g>
-<!-- proc~pressure_lower&#45;&gt;proc~find -->
-<g id="proc~~coesa_density~~CallsGraph_edge8" class="edge">
-<title>proc~pressure_lower&#45;&gt;proc~find</title>
-<path fill="none" stroke="#000000" d="M495,-20.84C513.47,-23.99 534.75,-28.93 553,-36.61 567.13,-42.55 581.4,-51.94 592.68,-60.33"/>
-<polygon fill="#000000" stroke="#000000" points="590.62,-63.15 600.68,-66.47 594.88,-57.6 590.62,-63.15"/>
+<path fill="none" stroke="#000000" d="M59.62,-146.12C74.62,-160.43 101.56,-183.92 129,-197 133.34,-199.07 137.9,-200.94 142.56,-202.64"/>
+<polygon fill="#000000" stroke="#000000" points="141.66,-206.02 152.25,-205.87 143.87,-199.38 141.66,-206.02"/>
 </g>
 <!-- proc~interpolation_index -->
-<g id="proc~~coesa_density~~CallsGraph_node9" class="node">
+<g id="proc~~coesa_density~~CallsGraph_node10" class="node">
 <title>proc~interpolation_index</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node9"><a xlink:href=".././proc/interpolation_index.html" xlink:title="interpolation_index">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="506.5,-111.61 391.5,-111.61 391.5,-87.61 506.5,-87.61 506.5,-111.61"/>
-<text text-anchor="middle" x="449" y="-97.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interpolation_index</text>
+<g id="a_proc~~coesa_density~~CallsGraph_node10"><a xlink:href=".././proc/interpolation_index.html" xlink:title="interpolation_index">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="506.5,-104 391.5,-104 391.5,-80 506.5,-80 506.5,-104"/>
+<text text-anchor="middle" x="449" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interpolation_index</text>
 </a>
 </g>
 </g>
 <!-- proc~mean_molecular_weight_upper&#45;&gt;proc~interpolation_index -->
 <g id="proc~~coesa_density~~CallsGraph_edge9" class="edge">
 <title>proc~mean_molecular_weight_upper&#45;&gt;proc~interpolation_index</title>
-<path fill="none" stroke="#000000" d="M285.34,-129.57C315.36,-124.04 350.94,-117.49 381.15,-111.92"/>
-<polygon fill="#000000" stroke="#000000" points="381.98,-115.33 391.18,-110.08 380.71,-108.45 381.98,-115.33"/>
+<path fill="none" stroke="#000000" d="M285.34,-121.96C315.36,-116.43 350.94,-109.88 381.15,-104.31"/>
+<polygon fill="#000000" stroke="#000000" points="381.98,-107.72 391.18,-102.47 380.71,-100.84 381.98,-107.72"/>
 </g>
 <!-- proc~interpolation_scale_factors -->
 <g id="proc~~coesa_density~~CallsGraph_node13" class="node">
 <title>proc~interpolation_scale_factors</title>
 <g id="a_proc~~coesa_density~~CallsGraph_node13"><a xlink:href=".././proc/interpolation_scale_factors.html" xlink:title="interpolation_scale_factors">
-<polygon fill="#d9534f" stroke="#d9534f" points="527,-153.61 371,-153.61 371,-129.61 527,-129.61 527,-153.61"/>
-<text text-anchor="middle" x="449" y="-139.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interpolation_scale_factors</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="527,-146 371,-146 371,-122 527,-122 527,-146"/>
+<text text-anchor="middle" x="449" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interpolation_scale_factors</text>
 </a>
 </g>
 </g>
 <!-- proc~mean_molecular_weight_upper&#45;&gt;proc~interpolation_scale_factors -->
-<g id="proc~~coesa_density~~CallsGraph_edge10" class="edge">
+<g id="proc~~coesa_density~~CallsGraph_edge8" class="edge">
 <title>proc~mean_molecular_weight_upper&#45;&gt;proc~interpolation_scale_factors</title>
-<path fill="none" stroke="#000000" d="M309.13,-141.61C325.99,-141.61 343.61,-141.61 360.42,-141.61"/>
-<polygon fill="#000000" stroke="#000000" points="360.77,-145.11 370.77,-141.61 360.77,-138.11 360.77,-145.11"/>
+<path fill="none" stroke="#000000" d="M309.13,-134C325.99,-134 343.61,-134 360.42,-134"/>
+<polygon fill="#000000" stroke="#000000" points="360.77,-137.5 370.77,-134 360.77,-130.5 360.77,-137.5"/>
+</g>
+<!-- proc~pressure_upper&#45;&gt;proc~interpolation_index -->
+<g id="proc~~coesa_density~~CallsGraph_edge11" class="edge">
+<title>proc~pressure_upper&#45;&gt;proc~interpolation_index</title>
+<path fill="none" stroke="#000000" d="M266.14,-92C299.2,-92 344.24,-92 381.23,-92"/>
+<polygon fill="#000000" stroke="#000000" points="381.43,-95.5 391.43,-92 381.43,-88.5 381.43,-95.5"/>
+</g>
+<!-- proc~pressure_upper&#45;&gt;proc~interpolation_scale_factors -->
+<g id="proc~~coesa_density~~CallsGraph_edge10" class="edge">
+<title>proc~pressure_upper&#45;&gt;proc~interpolation_scale_factors</title>
+<path fill="none" stroke="#000000" d="M266.14,-100.5C296.58,-106.11 337.16,-113.58 372.27,-120.05"/>
+<polygon fill="#000000" stroke="#000000" points="372.02,-123.56 382.49,-121.93 373.29,-116.68 372.02,-123.56"/>
+</g>
+<!-- proc~find -->
+<g id="proc~~coesa_density~~CallsGraph_node12" class="node">
+<title>proc~find</title>
+<g id="a_proc~~coesa_density~~CallsGraph_node12"><a xlink:href=".././proc/find.html" xlink:title="find">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="643,-146 589,-146 589,-122 643,-122 643,-146"/>
+<text text-anchor="middle" x="616" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find</text>
+</a>
+</g>
+</g>
+<!-- proc~pressure_lower&#45;&gt;proc~find -->
+<g id="proc~~coesa_density~~CallsGraph_edge12" class="edge">
+<title>proc~pressure_lower&#45;&gt;proc~find</title>
+<path fill="none" stroke="#000000" d="M495.08,-53.36C513.86,-56.2 535.36,-61.42 553,-71 572.1,-81.37 589.04,-99.54 600.37,-113.71"/>
+<polygon fill="#000000" stroke="#000000" points="597.8,-116.11 606.66,-121.92 603.35,-111.85 597.8,-116.11"/>
 </g>
 <!-- proc~tm -->
-<g id="proc~~coesa_density~~CallsGraph_node10" class="node">
+<g id="proc~~coesa_density~~CallsGraph_node11" class="node">
 <title>proc~tm</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node10"><a xlink:href=".././proc/tm.html" xlink:title="Tm">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="476,-195.61 422,-195.61 422,-171.61 476,-171.61 476,-195.61"/>
-<text text-anchor="middle" x="449" y="-181.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tm</text>
+<g id="a_proc~~coesa_density~~CallsGraph_node11"><a xlink:href=".././proc/tm.html" xlink:title="Tm">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="476,-188 422,-188 422,-164 476,-164 476,-188"/>
+<text text-anchor="middle" x="449" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Tm</text>
 </a>
 </g>
 </g>
 <!-- proc~temperature_lower&#45;&gt;proc~tm -->
-<g id="proc~~coesa_density~~CallsGraph_edge11" class="edge">
-<title>proc~temperature_lower&#45;&gt;proc~tm</title>
-<path fill="none" stroke="#000000" d="M276.07,-183.61C318.31,-183.61 375.01,-183.61 411.53,-183.61"/>
-<polygon fill="#000000" stroke="#000000" points="411.72,-187.11 421.72,-183.61 411.72,-180.11 411.72,-187.11"/>
-</g>
-<!-- proc~pressure_upper&#45;&gt;proc~interpolation_index -->
-<g id="proc~~coesa_density~~CallsGraph_edge12" class="edge">
-<title>proc~pressure_upper&#45;&gt;proc~interpolation_index</title>
-<path fill="none" stroke="#000000" d="M266.14,-99.61C299.2,-99.61 344.24,-99.61 381.23,-99.61"/>
-<polygon fill="#000000" stroke="#000000" points="381.43,-103.11 391.43,-99.61 381.43,-96.11 381.43,-103.11"/>
-</g>
-<!-- proc~pressure_upper&#45;&gt;proc~interpolation_scale_factors -->
 <g id="proc~~coesa_density~~CallsGraph_edge13" class="edge">
-<title>proc~pressure_upper&#45;&gt;proc~interpolation_scale_factors</title>
-<path fill="none" stroke="#000000" d="M266.14,-108.11C296.58,-113.71 337.16,-121.19 372.27,-127.66"/>
-<polygon fill="#000000" stroke="#000000" points="372.02,-131.17 382.49,-129.54 373.29,-124.29 372.02,-131.17"/>
+<title>proc~temperature_lower&#45;&gt;proc~tm</title>
+<path fill="none" stroke="#000000" d="M276.07,-176C318.31,-176 375.01,-176 411.53,-176"/>
+<polygon fill="#000000" stroke="#000000" points="411.72,-179.5 421.72,-176 411.72,-172.5 411.72,-179.5"/>
 </g>
 <!-- proc~mean_molecular_weight_ratio_lower -->
-<g id="proc~~coesa_density~~CallsGraph_node11" class="node">
+<g id="proc~~coesa_density~~CallsGraph_node9" class="node">
 <title>proc~mean_molecular_weight_ratio_lower</title>
-<g id="a_proc~~coesa_density~~CallsGraph_node11"><a xlink:href=".././proc/mean_molecular_weight_ratio_lower.html" xlink:title="mean_molecular_weight_ratio_lower">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="553,-69.61 345,-69.61 345,-45.61 553,-45.61 553,-69.61"/>
-<text text-anchor="middle" x="449" y="-55.21" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_ratio_lower</text>
+<g id="a_proc~~coesa_density~~CallsGraph_node9"><a xlink:href=".././proc/mean_molecular_weight_ratio_lower.html" xlink:title="mean_molecular_weight_ratio_lower">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="553,-230 345,-230 345,-206 553,-206 553,-230"/>
+<text text-anchor="middle" x="449" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mean_molecular_weight_ratio_lower</text>
 </a>
 </g>
 </g>
 <!-- proc~mean_molecular_weight_lower&#45;&gt;proc~mean_molecular_weight_ratio_lower -->
 <g id="proc~~coesa_density~~CallsGraph_edge14" class="edge">
 <title>proc~mean_molecular_weight_lower&#45;&gt;proc~mean_molecular_weight_ratio_lower</title>
-<path fill="none" stroke="#000000" d="M308.15,-57.61C316.89,-57.61 325.85,-57.61 334.79,-57.61"/>
-<polygon fill="#000000" stroke="#000000" points="334.88,-61.11 344.88,-57.61 334.88,-54.11 334.88,-61.11"/>
-</g>
-<!-- proc~interpolation_index&#45;&gt;proc~find -->
-<g id="proc~~coesa_density~~CallsGraph_edge15" class="edge">
-<title>proc~interpolation_index&#45;&gt;proc~find</title>
-<path fill="none" stroke="#000000" d="M506.78,-92.38C530.55,-89.36 557.48,-85.93 578.53,-83.25"/>
-<polygon fill="#000000" stroke="#000000" points="579.17,-86.7 588.65,-81.96 578.29,-79.75 579.17,-86.7"/>
-</g>
-<!-- proc~tm&#45;&gt;proc~find -->
-<g id="proc~~coesa_density~~CallsGraph_edge16" class="edge">
-<title>proc~tm&#45;&gt;proc~find</title>
-<path fill="none" stroke="#000000" d="M476.04,-183.39C498.11,-182.08 529.77,-177.43 553,-162.61 576.92,-147.34 594.77,-119.33 605.03,-99.88"/>
-<polygon fill="#000000" stroke="#000000" points="608.2,-101.36 609.57,-90.85 601.95,-98.21 608.2,-101.36"/>
+<path fill="none" stroke="#000000" d="M308.15,-218C316.89,-218 325.85,-218 334.79,-218"/>
+<polygon fill="#000000" stroke="#000000" points="334.88,-221.5 344.88,-218 334.88,-214.5 334.88,-221.5"/>
 </g>
 <!-- proc~mean_molecular_weight_ratio_lower&#45;&gt;proc~find -->
-<g id="proc~~coesa_density~~CallsGraph_edge17" class="edge">
+<g id="proc~~coesa_density~~CallsGraph_edge15" class="edge">
 <title>proc~mean_molecular_weight_ratio_lower&#45;&gt;proc~find</title>
-<path fill="none" stroke="#000000" d="M544.55,-69.64C556.62,-71.18 568.35,-72.67 578.66,-73.98"/>
-<polygon fill="#000000" stroke="#000000" points="578.48,-77.49 588.84,-75.28 579.36,-70.54 578.48,-77.49"/>
+<path fill="none" stroke="#000000" d="M532,-206C539.31,-203.53 546.42,-200.57 553,-197 572.1,-186.63 589.04,-168.46 600.37,-154.29"/>
+<polygon fill="#000000" stroke="#000000" points="603.35,-156.15 606.66,-146.08 597.8,-151.89 603.35,-156.15"/>
+</g>
+<!-- proc~interpolation_index&#45;&gt;proc~find -->
+<g id="proc~~coesa_density~~CallsGraph_edge16" class="edge">
+<title>proc~interpolation_index&#45;&gt;proc~find</title>
+<path fill="none" stroke="#000000" d="M506.7,-102.23C521.83,-105.32 538.11,-108.98 553,-113 561.6,-115.32 570.74,-118.19 579.28,-121.05"/>
+<polygon fill="#000000" stroke="#000000" points="578.38,-124.44 588.98,-124.37 580.65,-117.82 578.38,-124.44"/>
+</g>
+<!-- proc~tm&#45;&gt;proc~find -->
+<g id="proc~~coesa_density~~CallsGraph_edge17" class="edge">
+<title>proc~tm&#45;&gt;proc~find</title>
+<path fill="none" stroke="#000000" d="M476.03,-171.63C496.98,-167.88 527.1,-162 553,-155 561.6,-152.68 570.74,-149.81 579.28,-146.95"/>
+<polygon fill="#000000" stroke="#000000" points="580.65,-150.18 588.98,-143.63 578.38,-143.56 580.65,-150.18"/>
 </g>
 </g>
 </svg>
@@ -558,35 +439,11 @@ public function COESA_density(Z) result(density)
     </div></div></div></div>
       </div>
     </div>
-     
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -594,76 +451,61 @@ public function COESA_density(Z) result(density)
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="k">function </span><span class="n">COESA_density</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">density</span><span class="p">)</span>
-    <span class="c">!! a simple version that just returns density</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Z</span> <span class="c">!! altitude in meters</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">density</span> <span class="c">!! kg/m^3</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">H</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">P</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">500</span><span class="mf">0.0_wp</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        error stop</span> <span class="s2">&quot;altitude below lower bound of -5000 m&quot;</span>
-    <span class="k">else if</span> <span class="p">(</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="mf">0.0_wp</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        error stop</span> <span class="s2">&quot;altitude above upper bound of 1000000 m&quot;</span>
-    <span class="k">else if</span> <span class="p">(</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="mi">8600</span><span class="mf">0.0_wp</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">H</span> <span class="o">=</span> <span class="n">geopotential_altitude</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-        <span class="n">M</span> <span class="o">=</span> <span class="n">mean_molecular_weight_lower</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-        <span class="n">T</span> <span class="o">=</span> <span class="n">temperature_lower</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
-        <span class="n">P</span> <span class="o">=</span> <span class="n">pressure_lower</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
-    <span class="k">else</span>
-<span class="k">        </span><span class="n">T</span> <span class="o">=</span> <span class="n">temperature_upper</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-        <span class="n">P</span> <span class="o">=</span> <span class="n">pressure_upper</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-        <span class="n">M</span> <span class="o">=</span> <span class="n">mean_molecular_weight_upper</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-    <span class="k">end if</span>
-<span class="k">    </span><span class="n">density</span> <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="n">Rstar</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
-<span class="k">end function </span><span class="n">COESA_density</span>
+    <div class="highlight"><pre><span></span><span class="k">function </span><span class="n">COESA_density</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">density</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">!! a simple version that just returns density</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Z</span><span class="w"> </span><span class="c">!! altitude in meters</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">density</span><span class="w"> </span><span class="c">!! kg/m^3</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">H</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mi">500</span><span class="mf">0.0_wp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        error stop</span><span class="w"> </span><span class="s2">&quot;altitude below lower bound of -5000 m&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100000</span><span class="mf">0.0_wp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        error stop</span><span class="w"> </span><span class="s2">&quot;altitude above upper bound of 1000000 m&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8600</span><span class="mf">0.0_wp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">H</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geopotential_altitude</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_molecular_weight_lower</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temperature_lower</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressure_lower</span><span class="p">(</span><span class="n">H</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temperature_upper</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressure_upper</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_molecular_weight_upper</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="k">    </span><span class="n">density</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">Rstar</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"></span>
+<span class="k">end function </span><span class="n">COESA_density</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>standard-atmosphere was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>standard-atmosphere was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -691,14 +533,11 @@ public function COESA_density(Z) result(density)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>
