@@ -1,7 +1,6 @@
 program test
 
-use COESA_module
-use iso_fortran_env, wp => real64
+use COESA_module, wp => coesa_wp
 
 implicit none
 
@@ -50,9 +49,16 @@ real(wp),dimension(*),parameter :: alts = [ 0.0_wp,  &
                                             500000.0_wp, &
                                             1000000.0_wp ]
 
+write(*,*) ''
+call coesa_initialize()
+write(*,*) ''
+write(*,*) '-------'
+
+write(*,*) ''
 do i = 1, size(alts)
     d = COESA_density(alts(i))
     write(*,*) alts(i),d
 end do
+write(*,*) ''
 
 end program test

@@ -8,21 +8,33 @@
 
     module COESA_module
 
-    use iso_fortran_env, wp => real64
+    use,intrinsic :: iso_fortran_env
 
     implicit none
 
     private
+
+#ifdef REAL32
+    integer,parameter,private :: wp = real32   !! Real working precision [4 bytes]
+#elif REAL64
+    integer,parameter,private :: wp = real64   !! Real working precision [8 bytes]
+#elif REAL128
+    integer,parameter,private :: wp = real128  !! Real working precision [16 bytes]
+#else
+    integer,parameter,private :: wp = real64   !! Real working precision if not specified [8 bytes]
+#endif
+
+    integer,parameter,public :: coesa_wp = wp !! real kind to export from the module
 
     real(wp),parameter :: r0 = 6356766.0_wp ! (m), effective Earth radius at 45 deg N latitude
     real(wp),parameter :: g0 = 9.80665_wp ! (m / s^2) or (m^2 / s^2 m')
     real(wp),parameter :: M0 = 28.9644_wp ! (kg / kmol)
     real(wp),parameter :: Rstar = 8.31432e3_wp ! (N m / kmol K)
     real(wp),parameter :: gamma = 1.4_wp
-    real(wp),dimension(*),parameter :: Hb = [0, 11, 20, 32, 47, 51, 71] * 1000.0_wp ! (m')
+    real(wp),dimension(*),parameter :: Hb = [0.0_wp, 11.0_wp, 20.0_wp, 32.0_wp, 47.0_wp, 51.0_wp, 71.0_wp] * 1000.0_wp ! (m')
     real(wp),dimension(*),parameter :: Lmb = [-6.5_wp, 0.0_wp, 1.0_wp, 2.8_wp, 0.0_wp, -2.8_wp, -2.0_wp] / 1000.0_wp ! (K / m')
     real(wp),dimension(*),parameter :: Ztable = [80.0_wp, 80.5_wp, 81.0_wp, 81.5_wp, 82.0_wp, 82.5_wp, 83.0_wp, &
-                                                83.5_wp, 84.0_wp, 84.5_wp, 85.0_wp, 85.5_wp, 86.0_wp] * 1000 ! (m)
+                                                83.5_wp, 84.0_wp, 84.5_wp, 85.0_wp, 85.5_wp, 86.0_wp] * 1000.0_wp ! (m)
     real(wp),dimension(*),parameter :: Mratiotable = [1.0_wp, 0.999996_wp, 0.999989_wp, 0.999971_wp, 0.999941_wp, &
                                                     0.999909_wp, 0.999870_wp, 0.999829_wp, 0.999786_wp, 0.999741_wp, &
                                                     0.999694_wp, 0.999641_wp, 0.999579_wp]
@@ -72,21 +84,21 @@
         5.54_wp,   5.16_wp,  4.85_wp,  4.60_wp,  4.40_wp,  4.25_wp,  4.12_wp,  4.02_wp,  3.94_wp] ! (kg / kmol)
 
     ! ... computed by the initialize() routine:
-    real(wp),dimension(*),parameter :: Tmb = [0.288150000000000000E+003, &
-                                              0.216650000000000000E+003, &
-                                              0.216650000000000000E+003, &
-                                              0.228650000000000000E+003, &
-                                              0.270650000000000000E+003, &
-                                              0.270650000000000000E+003, &
-                                              0.214650000000000000E+003 ]
+    real(wp),dimension(*),parameter :: Tmb = [0.288150e+03_wp, &
+                                              0.216650e+03_wp, &
+                                              0.216650e+03_wp, &
+                                              0.228650e+03_wp, &
+                                              0.270650e+03_wp, &
+                                              0.270650e+03_wp, &
+                                              0.214650e+03_wp ]
 
-    real(wp),dimension(*),parameter :: Pb = [0.101325000000000000E+006, &
-                                             0.226320639734629302E+005, &
-                                             0.547488866967777956E+004, &
-                                             0.868018684755227330E+003, &
-                                             0.110906305554965877E+003, &
-                                             0.669388731186872660E+002, &
-                                             0.395642042804072865E+001 ]
+    real(wp),dimension(*),parameter :: Pb = [0.10132500000000000000000000000000000e+06_wp, &
+                                             0.22632063973462930198630411197384694e+05_wp, &
+                                             0.54748886696777795581076674036743120e+04_wp, &
+                                             0.86801868475522733011515546755612576e+03_wp, &
+                                             0.11090630555496587730129362892520126e+03_wp, &
+                                             0.66938873118687266040989982519838630e+02_wp, &
+                                             0.39564204280407286536355835964046252e+01_wp ]
 
     type,public :: State
         real(wp) :: mean_molecular_weight = 0.0_wp
@@ -99,11 +111,12 @@
 
     public :: COESA_atmosphere
     public :: COESA_density
+    public :: coesa_initialize
 
     contains
 !************************************************************************************
 
-subroutine initialize()
+subroutine coesa_initialize()
     integer :: i
     real(wp),dimension(:),allocatable :: Tmb,Pb
     Tmb = [288.15_wp] ! (K)
@@ -118,12 +131,13 @@ subroutine initialize()
             Pb = [Pb, Pb(i) * (Tmb(i) / (Tmb(i) + Lmb(i) * (Hb(i + 1) - Hb(i)))) ** (g0 * M0 / (Rstar * Lmb(i)))]
         end if
     end do
+    write(*,*) ''   ! E30.18E3 for doubles
+    write(*,'(A/,*(ss,E46.35E5,"_wp, &"/))') 'Tmb = [', Tmb
     write(*,*) ''
-    write(*,'(A,*(E30.18E3,1x))') 'Tmb = ', Tmb
+    write(*,'(A/,*(ss,E46.35E5,"_wp, &"/))') 'Pb = [', Pb
     write(*,*) ''
-    write(*,'(A,*(E30.18E3,1x))') 'Pb = ', Pb
-    write(*,*) ''
-end subroutine initialize
+
+end subroutine coesa_initialize
 
 pure function find(x, xvec) result(i)
     real(wp),intent(in) :: x
