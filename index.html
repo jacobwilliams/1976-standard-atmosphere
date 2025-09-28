@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="1976 Standard Atmosphere in Modern Fortran">
+    <meta name="author" content="Jacob Williams" >
+    <link rel="icon" href="./favicon.png">
+
+    <title> standard-atmosphere </title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="./css/fontawesome.min.css" rel="stylesheet">
+    <link href="./css/brands.min.css" rel="stylesheet">
+    <link href="./css/regular.min.css" rel="stylesheet">
+    <link href="./css/solid.min.css" rel="stylesheet">
+    <link href="./css/v4-font-face.min.css" rel="stylesheet">
+    <link href="./css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="./css/local.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+    <script src="./js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">standard-atmosphere </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./sourcefile/coesa.f90.html">Source File</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="./search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="p-5 mb-4 bg-light border rounded-3" id="jumbotron">
+      <p>1976 Standard Atmosphere in Modern Fortran</p>
+        <p> Find us on&hellip;</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams/1976-standard-atmosphere" role="button">GitHub</a>
+        
+        
+        
+        
+      </p>
+    </div>
+
+      <div class="row" id='text'>
+        <div class=col-md-8>
+          <h1>standard-atmosphere</h1>
+          <h1><img alt="1976-standard-atmosphere" src="media/logo.png"></h1>
+<p><img alt="Build Status" src="https://github.com/jacobwilliams/1976-standard-atmosphere/actions/workflows/CI.yml/badge.svg"></p>
+<p>1976 Standard Atmosphere in Modern Fortran</p>
+<p>The U.S. Committee on Extension to the Standard Atmosphere (COESA) atmosphere
+model, also known as the U.S. Standard Atmosphere, 1976. A Fortran translation of the Julia code from <a href="https://github.com/danielmatz/COESA.jl">COESA.jl</a>.</p>
+<p>Just an experiment. Has not been validated.</p>
+<h2>Implementation</h2>
+<p>For altitudes below 86 km, the equations from the original report are used.  The
+published tables have a discontinuity in the mean molecular weight and
+temperature at 86 km.  The report outlines how to blend out the discontinuity.
+We implement this blending here.  In this region, the model output matches the
+published tables nearly perfectly.  Only a few of the tested altitudes show
+differences.  It is only in the pressure values, and in these cases we only miss
+the least significant digit.</p>
+<p>For the region above 86 km, the temperature is computed using the equations from
+the original report, but the equations for the mean molecular weight and
+pressure are much more complex.  Instead, we adapt the method from Regan's
+<em>Re-Entry Vehicle Dynamics</em> to interpolate the tabulated mean molecular weight
+and pressure.  We use a quadratic interpolation on the mean molecular weight and
+the natural log of the pressure.  Because we are using interpolation, the
+computed pressure and density occasionally don't match the published values.
+The values are very small, and we still have at least 2 significant digits.</p>
+<p>The density is computed as outlined by the original report.</p>
+<p>The speed of sound is computed as outlined by the original report for altitudes
+below 86 km.  For altitudes above 86 km, the speed of sound at 86 km is used.</p>
+<h2>Compiling</h2>
+<p>A <a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a> manifest file is included, so that the library and tests cases can be compiled with FPM. For example:</p>
+<div class="codehilite"><pre><span></span><code>fpm build --profile release
+fpm test --profile release
+</code></pre></div>
+
+<p>To use <code>standard-atmosphere</code> within your fpm project, add the following to your <code>fpm.toml</code> file:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span>
+<span class="n">standard-atmosphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="p">=</span><span class="s2">&quot;https://github.com/jacobwilliams/1976-standard-atmosphere.git&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+
+<h2>Documentation</h2>
+<p>The API documentation for the current <code>master</code> branch can be found <a href="https://jacobwilliams.github.io/1976-standard-atmosphere/">here</a>.  This is generated by processing the source files with <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>.</p>
+<h3>License</h3>
+<p>This library is released under a <a href="https://github.com/jacobwilliams/1976-standard-atmosphere/blob/master/LICENSE">permissive license</a>.</p>
+<h2>References</h2>
+<ol>
+<li>"<a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19770009539.pdf">U.S. Standard Atmosphere, 1976</a>". Stock No. 003-017-00323-0.</li>
+<li>Regan, F.J., "Re-Entry Vehicle Dynamics", AIAA Press, New York, 1984.</li>
+</ol>
+        </div>
+          <div class="col-md-4">
+            <div class="card card-body bg-light">
+              <h2 class="card-title">Developer Info</h2>
+              <h4 class="card-text">Jacob Williams</h4>
+              <p class="card-text"></p>
+                <div class="text-center"><div class="btn-group" role="group">
+                    
+                    <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams"><i class="fa fa-github fa-lg"></i></a>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div></div>
+            </div>
+          </div>
+      </div>
+        <div class="row">
+          <hr>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Source Files</h3>
+              <ul><li><a href='sourcefile/coesa.f90.html'>COESA.F90</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/files.html"><em>All source files&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Modules</h3>
+              <ul><li><a href='module/coesa_module.html'>COESA_module</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/modules.html"><em>All modules&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Procedures</h3>
+              <ul><li><a href='proc/coesa_atmosphere.html'>COESA_atmosphere</a></li><li><a href='proc/coesa_density.html'>COESA_density</a></li><li><a href='proc/coesa_initialize.html'>coesa_initialize</a></li><li><a href='proc/density.html'>density</a></li><li><a href='proc/dynamic_viscosity.html'>dynamic_viscosity</a></li><li><a href='proc/find.html'>find</a></li><li><a href='proc/geopotential_altitude.html'>geopotential_altitude</a></li><li><a href='proc/interpolation_index.html'>interpolation_index</a></li><li><a href='proc/interpolation_scale_factors.html'>interpolation_scale_factors</a></li><li><a href='proc/mean_molecular_weight_lower.html'>mean_molecular_weight_lower</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Derived Types</h3>
+              <ul><li><a href='type/state.html'>State</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/types.html"><em>All derived types&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              standard-atmosphere
+ was developed by Jacob Williams<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1730 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="1976 Standard Atmosphere in Modern Fortran">
+    <meta name="author" content="Jacob Williams" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>COESA_module &ndash; standard-atmosphere</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">standard-atmosphere </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../sourcefile/coesa.f90.html">Source File</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>COESA_module
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="100.0% of total for modules and submodules.">235 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/COESA.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/coesa.f90.html'>COESA.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">COESA_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/coesa_module.html#variable-wp">wp</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-coesa_wp">coesa_wp</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-r0">r0</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-g0">g0</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-m0">M0</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-rstar">Rstar</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-gamma">gamma</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-hb">Hb</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-lmb">Lmb</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-ztable">Ztable</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-mratiotable">Mratiotable</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-ztableupper">Ztableupper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-ptableupper">Ptableupper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-logptableupper">logPtableupper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-mtableupper">Mtableupper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-tmb">Tmb</a>
+            <a class="list-group-item" href="../module/coesa_module.html#variable-pb">Pb</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/coesa_module.html#type-state">State</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/coesa_module.html#proc-find">find</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-density">density</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-geopotential_altitude">geopotential_altitude</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-tm">Tm</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-temperature_lower">temperature_lower</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-pressure_lower">pressure_lower</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-speed_of_sound_lower">speed_of_sound_lower</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-mean_molecular_weight_ratio_lower">mean_molecular_weight_ratio_lower</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-mean_molecular_weight_lower">mean_molecular_weight_lower</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-temperature_upper">temperature_upper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-interpolation_index">interpolation_index</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-pressure_upper">pressure_upper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-mean_molecular_weight_upper">mean_molecular_weight_upper</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-speed_of_sound_86km">speed_of_sound_86km</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-dynamic_viscosity">dynamic_viscosity</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-coesa_atmosphere">COESA_atmosphere</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-coesa_density">COESA_density</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/coesa_module.html#proc-coesa_initialize">coesa_initialize</a>
+            <a class="list-group-item" href="../module/coesa_module.html#proc-interpolation_scale_factors">interpolation_scale_factors</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>1976 Standard Atmosphere Model</p>
+<h3>History</h3>
+<ul>
+<li>Original Julia code from: https://github.com/danielmatz/COESA.jl [MIT License]</li>
+<li>Jacob Williams, converted to Fortran 4/30/2020</li>
+</ul>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~coesa_module~~UsesGraph Pages: 1 -->
+<svg id="modulecoesa_moduleUsesGraph" width="233pt" height="32pt"
+ viewBox="0.00 0.00 233.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~coesa_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~coesa_module~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 229,-28 229,4 -4,4"/>
+<!-- module~coesa_module -->
+<g id="module~~coesa_module~~UsesGraph_node1" class="node">
+<title>module~coesa_module</title>
+<polygon fill="none" stroke="black" points="225,-24 130,-24 130,0 225,0 225,-24"/>
+<text text-anchor="middle" x="177.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">COESA_module</text>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~coesa_module~~UsesGraph_node2" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~coesa_module~~UsesGraph_node2"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-24 0,-24 0,0 94,0 94,-24"/>
+<text text-anchor="middle" x="47" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~coesa_module&#45;&gt;iso_fortran_env -->
+<g id="module~~coesa_module~~UsesGraph_edge1" class="edge">
+<title>module~coesa_module&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M129.75,-12C121.48,-12 112.8,-12 104.3,-12"/>
+<polygon fill="#000000" stroke="#000000" points="104.08,-8.5 94.08,-12 104.08,-15.5 104.08,-8.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wp"></span>
+              integer,
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>wp</strong></td>
+<td> =</td>
+                <td>real64</td>
+            <td>
+                <p>Real working precision if not specified [8 bytes]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coesa_wp"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>coesa_wp</strong></td>
+<td> =</td>
+                <td>wp</td>
+            <td>
+                <p>real kind to export from the module</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r0"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>r0</strong></td>
+<td> =</td>
+                <td>6356766.0_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g0"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>g0</strong></td>
+<td> =</td>
+                <td>9.80665_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m0"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>M0</strong></td>
+<td> =</td>
+                <td>28.9644_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rstar"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>Rstar</strong></td>
+<td> =</td>
+                <td>8.31432e3_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gamma"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>gamma</strong></td>
+<td> =</td>
+                <td>1.4_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hb"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Hb</strong></td>
+<td> =</td>
+                <td>[0.0_wp, 11.0_wp, 20.0_wp, 32.0_wp, 47.0_wp, 51.0_wp, 71.0_wp]*1000.0_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lmb"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Lmb</strong></td>
+<td> =</td>
+                <td>[-6.5_wp, 0.0_wp, 1.0_wp, 2.8_wp, 0.0_wp, -2.8_wp, -2.0_wp]/1000.0_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ztable"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Ztable</strong></td>
+<td> =</td>
+                <td>[80.0_wp, 80.5_wp, 81.0_wp, 81.5_wp, 82.0_wp, 82.5_wp, 83.0_wp, 83.5_wp, 84.0_wp, 84.5_wp, 85.0_wp, 85.5_wp, 86.0_wp]*1000.0_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mratiotable"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Mratiotable</strong></td>
+<td> =</td>
+                <td>[1.0_wp, 0.999996_wp, 0.999989_wp, 0.999971_wp, 0.999941_wp, 0.999909_wp, 0.999870_wp, 0.999829_wp, 0.999786_wp, 0.999741_wp, 0.999694_wp, 0.999641_wp, 0.999579_wp]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ztableupper"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Ztableupper</strong></td>
+<td> =</td>
+                <td>[86000.0_wp, 87000.0_wp, 88000.0_wp, 89000.0_wp, 90000.0_wp, 91000.0_wp, 93000.0_wp, 95000.0_wp, 97000.0_wp, 99000.0_wp, 101000.0_wp, 103000.0_wp, 105000.0_wp, 107000.0_wp, 109000.0_wp, 110000.0_wp, 111000.0_wp, 112000.0_wp, 113000.0_wp, 114000.0_wp, 115000.0_wp, 116000.0_wp, 117000.0_wp, 118000.0_wp, 119000.0_wp, 120000.0_wp, 125000.0_wp, 130000.0_wp, 135000.0_wp, 140000.0_wp, 145000.0_wp, 150000.0_wp, 160000.0_wp, 170000.0_wp, 180000.0_wp, 190000.0_wp, 200000.0_wp, 210000.0_wp, 220000.0_wp, 230000.0_wp, 240000.0_wp, 250000.0_wp, 260000.0_wp, 270000.0_wp, 280000.0_wp, 290000.0_wp, 300000.0_wp, 310000.0_wp, 320000.0_wp, 330000.0_wp, 340000.0_wp, 350000.0_wp, 360000.0_wp, 370000.0_wp, 380000.0_wp, 390000.0_wp, 400000.0_wp, 410000.0_wp, 420000.0_wp, 430000.0_wp, 440000.0_wp, 450000.0_wp, 460000.0_wp, 470000.0_wp, 480000.0_wp, 490000.0_wp, 500000.0_wp, 525000.0_wp, 550000.0_wp, 575000.0_wp, 600000.0_wp, 625000.0_wp, 650000.0_wp, 675000.0_wp, 700000.0_wp, 725000.0_wp, 750000.0_wp, 775000.0_wp, 800000.0_wp, 825000.0_wp, 850000.0_wp, 875000.0_wp, 900000.0_wp, 925000.0_wp, 950000.0_wp, 975000.0_wp, 1000000.0_wp]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ptableupper"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Ptableupper</strong></td>
+<td> =</td>
+                <td>[3.7338E-1_wp, 3.1259E-1_wp, 2.6173E-1_wp, 2.1919E-1_wp, 1.8359E-1_wp, 1.5381E-1_wp, 1.0801E-1_wp, 7.5966E-2_wp, 5.3571E-2_wp, 3.7948E-2_wp, 2.7192E-2_wp, 1.9742E-2_wp, 1.4477E-2_wp, 1.0751E-2_wp, 8.1142E-3_wp, 7.1042E-3_wp, 6.2614E-3_wp, 5.5547E-3_wp, 4.9570E-3_wp, 4.4473E-3_wp, 4.0096E-3_wp, 3.6312E-3_wp, 3.3022E-3_wp, 3.0144E-3_wp, 2.7615E-3_wp, 2.5382E-3_wp, 1.7354E-3_wp, 1.2505E-3_wp, 9.3568E-4_wp, 7.2028E-4_wp, 5.6691E-4_wp, 4.5422E-4_wp, 3.0395E-4_wp, 2.1210E-4_wp, 1.5271E-4_wp, 1.1266E-4_wp, 8.4736E-5_wp, 6.4756E-5_wp, 5.0149E-5_wp, 3.9276E-5_wp, 3.1059E-5_wp, 2.4767E-5_wp, 1.9894E-5_wp, 1.6083E-5_wp, 1.3076E-5_wp, 1.0683E-5_wp, 8.7704E-6_wp, 7.2285E-6_wp, 5.9796E-6_wp, 4.9630E-6_wp, 4.1320E-6_wp, 3.4498E-6_wp, 2.8878E-6_wp, 2.4234E-6_wp, 2.0384E-6_wp, 1.7184E-6_wp, 1.4518E-6_wp, 1.2291E-6_wp, 1.0427E-6_wp, 8.8645E-7_wp, 7.5517E-7_wp, 6.4468E-7_wp, 5.5155E-7_wp, 4.7292E-7_wp, 4.0642E-7_wp, 3.5011E-7_wp, 3.0236E-7_wp, 2.1200E-7_wp, 1.5137E-7_wp, 1.1028E-7_wp, 8.2130E-8_wp, 6.2601E-8_wp, 4.8865E-8_wp, 3.9048E-8_wp, 3.1908E-8_wp, 2.6611E-8_wp, 2.2599E-8_wp, 1.9493E-8_wp, 1.7036E-8_wp, 1.5051E-8_wp, 1.3415E-8_wp, 1.2043E-8_wp, 1.0873E-8_wp, 9.8635E-9_wp, 8.9816E-9_wp, 8.2043E-9_wp, 7.5138E-9_wp]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logptableupper"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>logPtableupper</strong></td>
+<td> =</td>
+                <td>log(Ptableupper)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mtableupper"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Mtableupper</strong></td>
+<td> =</td>
+                <td>[28.95_wp, 28.95_wp, 28.94_wp, 28.93_wp, 28.91_wp, 28.89_wp, 28.82_wp, 28.73_wp, 28.62_wp, 28.48_wp, 28.30_wp, 28.10_wp, 27.88_wp, 27.64_wp, 27.39_wp, 27.27_wp, 27.14_wp, 27.02_wp, 26.90_wp, 26.79_wp, 26.68_wp, 26.58_wp, 26.48_wp, 26.38_wp, 26.29_wp, 26.20_wp, 25.80_wp, 25.44_wp, 25.09_wp, 24.75_wp, 24.42_wp, 24.10_wp, 23.49_wp, 22.90_wp, 22.34_wp, 21.81_wp, 21.30_wp, 20.83_wp, 20.37_wp, 19.95_wp, 19.56_wp, 19.19_wp, 18.85_wp, 18.53_wp, 18.24_wp, 17.97_wp, 17.73_wp, 17.50_wp, 17.29_wp, 17.09_wp, 16.91_wp, 16.74_wp, 16.57_wp, 16.42_wp, 16.27_wp, 16.13_wp, 15.98_wp, 15.84_wp, 15.70_wp, 15.55_wp, 15.40_wp, 15.25_wp, 15.08_wp, 14.91_wp, 14.73_wp, 14.54_wp, 14.33_wp, 13.76_wp, 13.09_wp, 12.34_wp, 11.51_wp, 10.62_wp, 9.72_wp, 8.83_wp, 8.00_wp, 7.24_wp, 6.58_wp, 6.01_wp, 5.54_wp, 5.16_wp, 4.85_wp, 4.60_wp, 4.40_wp, 4.25_wp, 4.12_wp, 4.02_wp, 3.94_wp]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tmb"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Tmb</strong></td>
+<td> =</td>
+                <td>[0.288150e+03_wp, 0.216650e+03_wp, 0.216650e+03_wp, 0.228650e+03_wp, 0.270650e+03_wp, 0.270650e+03_wp, 0.214650e+03_wp]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pb"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(*)
+            </td>
+            <td>::</td>
+            <td><strong>Pb</strong></td>
+<td> =</td>
+                <td>[0.10132500000000000000000000000000000e+06_wp, 0.22632063973462930198630411197384694e+05_wp, 0.54748886696777795581076674036743120e+04_wp, 0.86801868475522733011515546755612576e+03_wp, 0.11090630555496587730129362892520126e+03_wp, 0.66938873118687266040989982519838630e+02_wp, 0.39564204280407286536355835964046252e+01_wp]</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-state"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/state.html'>State</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mean_molecular_weight"></span>
+              real(kind=wp),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mean_molecular_weight</strong></td>
+<td> =</td>
+                <td>0.0_wp</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-temperature"></span>
+              real(kind=wp),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>temperature</strong></td>
+<td> =</td>
+                <td>0.0_wp</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pressure"></span>
+              real(kind=wp),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pressure</strong></td>
+<td> =</td>
+                <td>0.0_wp</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-speed_of_sound"></span>
+              real(kind=wp),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>speed_of_sound</strong></td>
+<td> =</td>
+                <td>0.0_wp</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/state.html#boundprocedure-density'>density</a></strong></td>
+                  <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-find"></span> <h3>private pure function <a href='../proc/find.html'>find</a>(x, xvec) result(i)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xvec"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>xvec</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-density"></span> <h3>private pure function <a href='../proc/density.html'>density</a>(s)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s"></span>
+              class(<a href='../type/state.html'>State</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-geopotential_altitude"></span> <h3>private pure function <a href='../proc/geopotential_altitude.html'>geopotential_altitude</a>(Z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-tm"></span> <h3>private pure function <a href='../proc/tm.html'>Tm</a>(H)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-temperature_lower"></span> <h3>private pure function <a href='../proc/temperature_lower.html'>temperature_lower</a>(H, M)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>M</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-pressure_lower"></span> <h3>private pure function <a href='../proc/pressure_lower.html'>pressure_lower</a>(H)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-speed_of_sound_lower"></span> <h3>private pure function <a href='../proc/speed_of_sound_lower.html'>speed_of_sound_lower</a>(T, M)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-t"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>T</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>M</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-mean_molecular_weight_ratio_lower"></span> <h3>private pure function <a href='../proc/mean_molecular_weight_ratio_lower.html'>mean_molecular_weight_ratio_lower</a>(Z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-mean_molecular_weight_lower"></span> <h3>private pure function <a href='../proc/mean_molecular_weight_lower.html'>mean_molecular_weight_lower</a>(Z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-temperature_upper"></span> <h3>private pure function <a href='../proc/temperature_upper.html'>temperature_upper</a>(Z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~4"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-interpolation_index"></span> <h3>private pure function <a href='../proc/interpolation_index.html'>interpolation_index</a>(Z) result(i)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~5"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-pressure_upper"></span> <h3>private pure function <a href='../proc/pressure_upper.html'>pressure_upper</a>(Z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~7"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-mean_molecular_weight_upper"></span> <h3>private pure function <a href='../proc/mean_molecular_weight_upper.html'>mean_molecular_weight_upper</a>(Z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~8"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-speed_of_sound_86km"></span> <h3>private pure function <a href='../proc/speed_of_sound_86km.html'>speed_of_sound_86km</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-dynamic_viscosity"></span> <h3>private pure function <a href='../proc/dynamic_viscosity.html'>dynamic_viscosity</a>(Z, T)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~10"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+<p>altitude (m)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-t~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>T</strong></td>
+            <td>
+<p>temperature (K)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-coesa_atmosphere"></span> <h3>public  function <a href='../proc/coesa_atmosphere.html'>COESA_atmosphere</a>(Z) result(s)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~11"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/state.html'>State</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-coesa_density"></span> <h3>public  function <a href='../proc/coesa_density.html'>COESA_density</a>(Z) result(density)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>a simple version that just returns density</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~12"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+<p>altitude in meters</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    <p>kg/m^3</p>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-coesa_initialize"></span> <h3>public  subroutine <a href='../proc/coesa_initialize.html'>coesa_initialize</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-interpolation_scale_factors"></span> <h3>private pure subroutine <a href='../proc/interpolation_scale_factors.html'>interpolation_scale_factors</a>(i, Z, scale0, scale1, scale2)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~7"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~6"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scale0"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scale0</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scale1"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scale1</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scale2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scale2</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              standard-atmosphere
+ was developed by Jacob Williams<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
