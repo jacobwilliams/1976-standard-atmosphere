@@ -140,15 +140,39 @@ subroutine coesa_initialize()
 end subroutine coesa_initialize
 
 pure function find(x, xvec) result(i)
+    !! Binary search to find index i such that xvec(i) <= x < xvec(i+1)
+    !! Assumes xvec is sorted in ascending order
+    !!
+    !!@note Replaces the simple loop in the original code.
     real(wp),intent(in) :: x
     real(wp),dimension(:),intent(in) :: xvec
     integer :: i
-    i = 1
-    do
-        if (i >= size(xvec)) exit
-        if (x <= xvec(i + 1)) exit
-        i = i + 1
+    integer :: left, right, mid
+
+    left = 1
+    right = size(xvec)
+
+    ! Handle edge cases
+    if (x <= xvec(1)) then
+        i = 1
+        return
+    end if
+    if (x > xvec(right)) then
+        i = right
+        return
+    end if
+
+    ! Binary search
+    do while (right - left > 1)
+        mid = (left + right) / 2
+        if (x < xvec(mid)) then
+            right = mid
+        else
+            left = mid
+        end if
     end do
+
+    i = left
 end function find
 
 pure real(wp) function density(s)
